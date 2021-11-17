@@ -13,6 +13,7 @@ class Login extends Component {
       isLoad: false,
       returnApi: false,
       isDisabled: true,
+
     };
 
     this.handleData = this.handleData.bind(this);
@@ -31,7 +32,6 @@ class Login extends Component {
 
   async fetchApi() {
     const { name } = this.state;
-
     this.setState({
       isLoad: true,
     });
@@ -49,11 +49,11 @@ class Login extends Component {
     const { isLoad, name, returnApi, isDisabled } = this.state;
 
     return (
-      <>
-        <h2>TrybeTunes</h2>
-        <div className="container-login" data-testid="page-login">
-          {isLoad ? <Loading />
-            : (
+      <div data-testid="page-login">
+        {isLoad ? <Loading />
+          : (
+            <div className="container-login">
+              <h2>TrybeTunes</h2>
               <form>
                 <label htmlFor="name">
                   <input
@@ -79,10 +79,11 @@ class Login extends Component {
                   </button>
                 </label>
               </form>
-            )}
-          { returnApi && <Redirect to="./search" /> }
-        </div>
-      </>
+            </div>
+          )}
+        { returnApi && <Redirect to="./search" /> }
+
+      </div>
     );
   }
 }
