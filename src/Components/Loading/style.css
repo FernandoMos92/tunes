@@ -10,7 +10,7 @@
 }
 
 .load div {
-  animation: move 4s linear infinite;
+  animation: move 3s linear infinite;
   color: rgb(47, 193, 140);
   font-family: Helvetica , Arial , sans-serif;
   font-size: 2rem;
@@ -28,7 +28,7 @@
 }
 
 .load div:nth-child( 2 ) {
-  animation-delay: -0.6s;
+  animation-delay: -0.4s;
 }
 
 .load div:nth-child( 3 ) {
