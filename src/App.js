@@ -8,8 +8,6 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
-import Loading from './Components/Loading';
-
 class App extends React.Component {
   constructor() {
     super();

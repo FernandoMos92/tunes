@@ -1,0 +1,44 @@
+html {
+  align-items: center;
+  background-color: aliceblue;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+h2 {
+  text-align: center;
+}
+
+.container-login {
+  background-color: beige;
+  border-radius: 15px;
+  box-shadow: 2px 2px 14px black;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  padding: 20px;
+  width: 25vw;
+}
+
+.input-name {
+  border: none;
+  border-bottom: 2px groove black;
+  border-radius: 5px;
+  margin-left: 16%;
+  margin-top: 6%;
+  outline: none;
+  padding: 8px;
+}
+
+.btn-login {
+  border-radius: 10px;
+  font-weight: 900;
+  height: 5vh;
+  margin-left: 29%;
+  margin-top: 8%;
+  text-transform: uppercase;
+  width: 10vw;
+}
+
