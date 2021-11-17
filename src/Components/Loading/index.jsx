@@ -5,6 +5,7 @@ class index extends Component {
   render() {
     return (
       <div className="load">
+        <p className="hidden-class">Carregando...</p>
         <div>G</div>
         <div>N</div>
         <div>I</div>

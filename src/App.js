@@ -9,24 +9,7 @@ import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isDisabled: true,
-    };
-
-    this.handleDisabled = this.handleDisabled.bind(this);
-  }
-
-  handleDisabled(event) {
-    const { value } = event.target;
-    const minCharacter = 3;
-    this.setState({ isDisabled: value.length < minCharacter });
-  }
-
   render() {
-    const { isDisabled } = this.state;
     return (
       <BrowserRouter>
         <Switch>
@@ -34,10 +17,7 @@ class App extends React.Component {
             exact
             path="/"
             render={ () => (
-              <Login
-                isDisabled={ isDisabled }
-                handleDisabled={ this.handleDisabled }
-              />) }
+              <Login />) }
           />
           <Route exact path="/search" component={ Search } />
           <Route exact path="/album/:id" component={ Album } />
