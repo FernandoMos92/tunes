@@ -37,9 +37,7 @@ class index extends Component {
             <h3 data-testid="header-user-name">
               {name}
             </h3>
-          )
-        }
-
+          )}
       </header>
     );
   }
