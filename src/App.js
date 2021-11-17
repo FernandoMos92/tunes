@@ -8,12 +8,39 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
+import Loading from './Components/Loading';
+
 class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      isDisabled: true,
+    };
+
+    this.handleDisabled = this.handleDisabled.bind(this);
+  }
+
+  handleDisabled(event) {
+    const { value } = event.target;
+    const minCharacter = 3;
+    this.setState({ isDisabled: value.length < minCharacter });
+  }
+
   render() {
+    const { isDisabled } = this.state;
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={ Login } />
+          <Route
+            exact
+            path="/"
+            render={ () => (
+              <Login
+                isDisabled={ isDisabled }
+                handleDisabled={ this.handleDisabled }
+              />) }
+          />
           <Route exact path="/search" component={ Search } />
           <Route exact path="/album/:id" component={ Album } />
           <Route exact path="/favorites" component={ Favorites } />
