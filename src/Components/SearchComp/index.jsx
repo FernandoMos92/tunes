@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Loading from '../Loading';
+import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 
 class index extends Component {
   constructor() {
@@ -6,6 +8,8 @@ class index extends Component {
     this.state = {
       input: '',
       isDisabled: true,
+      isLoad: true,
+      response: [],
     };
 
     this.handleDisabled = this.handleDisabled.bind(this);
@@ -22,34 +26,46 @@ class index extends Component {
   }
 
   handleSubmit({ target }) {
+    const { input } = this.state;
     const { value } = target;
-    this.setState({ input: value }, () => {
-      this.setState({ isDisabled: !this.handleDisabled() });
+
+    this.setState({ input: value });
+    this.setState({
+      isDisabled: !this.handleDisabled(),
+    });
+
+    searchAlbumsAPI(input).then((data) => {
+      this.setState({ response: data });
     });
   }
 
   render() {
-    const { isDisabled, input } = this.state;
+    const { isDisabled, input, isLoad, response } = this.state;
     const { handleSubmit } = this;
     return (
-      <form>
-        <input
-          type="text"
-          placeholder="Procurar um artista..."
-          data-testid="search-artist-input"
-          onChange={ handleSubmit }
-          name={ input }
-          value={ input }
-        />
-        <button
-          disabled={ isDisabled }
-          type="submit"
-          data-testid="search-artist-button"
-          onClick={ handleSubmit }
-        >
-          Procurar
-        </button>
-      </form>
+      <div>
+        { !isLoad ? <Loading />
+          : (
+            <form>
+              <input
+                type="text"
+                placeholder="Procurar um artista..."
+                data-testid="search-artist-input"
+                onChange={ handleSubmit }
+                name={ input }
+                value={ input }
+              />
+              <button
+                disabled={ isDisabled }
+                type="submit"
+                data-testid="search-artist-button"
+                onClick={ handleSubmit }
+              >
+                Procurar
+              </button>
+            </form>
+          )}
+      </div>
     );
   }
 }
