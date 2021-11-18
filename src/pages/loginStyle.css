@@ -2,7 +2,6 @@ html {
   align-items: center;
   background-color: aliceblue;
   display: flex;
-  height: 100vh;
   justify-content: center;
   width: 100vw;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 
@@ -11,6 +12,7 @@ class index extends Component {
       isLoad: true,
       response: [],
       phraseDefault: '',
+      verifyResponse: false,
     };
 
     this.handleDisabled = this.handleDisabled.bind(this);
@@ -29,23 +31,27 @@ class index extends Component {
 
   handleInputChange({ target }) {
     const { value } = target;
-    this.setState({ input: value });
-
-    this.setState({
-      isDisabled: !this.handleDisabled(),
+    this.setState({ input: value }, () => {
+      this.setState({
+        isDisabled: !this.handleDisabled(),
+      });
     });
   }
 
-  async handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     const { response } = this.state;
-    this.setState({ isLoad: false });
+    this.setState({
+      isLoad: false,
+      input: '',
+    });
     const { input } = this.state;
-    await searchAlbumsAPI(input).then((data) => {
+    searchAlbumsAPI(input).then((data) => {
       this.setState({
         response: data,
+        verifyResponse: true,
+        phraseDefault: ` ${input}`,
         // Lógica concluida com o auxilo João (Lenny)
-        phraseDefault: ` ${data[1].artistName}`,
       });
     });
     if (response !== []) {
@@ -54,36 +60,71 @@ class index extends Component {
   }
 
   render() {
-    console.log(this);
-    const { isDisabled, input, isLoad, response, phraseDefault } = this.state;
+    const {
+      isDisabled,
+      input,
+      isLoad,
+      response,
+      phraseDefault,
+      verifyResponse,
+    } = this.state;
     const { handleSubmit, handleInputChange } = this;
     return (
       <div>
-        { !isLoad ? <Loading />
-          : (
-            <form>
-              <input
-                type="text"
-                placeholder="Procurar um artista..."
-                data-testid="search-artist-input"
-                onChange={ handleInputChange }
-                name={ input }
-                value={ input }
-              />
-              <button
-                disabled={ isDisabled }
-                type="submit"
-                data-testid="search-artist-button"
-                onClick={ handleSubmit }
-              >
-                Procurar
-              </button>
-              <p>
-                Resultado de álbuns de:
-                {phraseDefault}
-              </p>
-            </form>
+        <form>
+          <input
+            type="text"
+            placeholder="Procurar um artista..."
+            data-testid="search-artist-input"
+            onChange={ handleInputChange }
+            name={ input }
+            value={ input }
+          />
+          {!isLoad ? (
+            <Loading />
+          ) : (
+            <button
+              disabled={ isDisabled }
+              type="submit"
+              data-testid="search-artist-button"
+              onClick={ handleSubmit }
+            >
+              Procurar
+            </button>
           )}
+          <h4>
+            Resultado de álbuns de:
+            {phraseDefault}
+          </h4>
+          {verifyResponse && (
+            response.length > 0 ? (
+              <div>
+                <div>
+                  {response.map((album) => {
+                    const {
+                      artworkUrl100,
+                      artistName,
+                      collectionName,
+                      collectionId,
+                    } = album;
+                    return (
+                      <Link
+                        to={ `/album/${collectionId}` }
+                        data-testid={ `link-to-album-${collectionId}` }
+                        key={ collectionId }
+                      >
+                        <img src={ artworkUrl100 } alt={ collectionName } />
+                        <p>{collectionName}</p>
+                        <p>{artistName}</p>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              'Nenhum álbum foi encontrado'
+            ))}
+        </form>
       </div>
     );
   }
