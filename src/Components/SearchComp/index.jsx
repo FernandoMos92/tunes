@@ -10,10 +10,12 @@ class index extends Component {
       isDisabled: true,
       isLoad: true,
       response: [],
+      phraseDefault: '',
     };
 
     this.handleDisabled = this.handleDisabled.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleDisabled() {
@@ -25,23 +27,36 @@ class index extends Component {
     return false;
   }
 
-  handleSubmit({ target }) {
-    const { input } = this.state;
+  handleInputChange({ target }) {
     const { value } = target;
-
     this.setState({ input: value });
+
     this.setState({
       isDisabled: !this.handleDisabled(),
     });
+  }
 
-    searchAlbumsAPI(input).then((data) => {
-      this.setState({ response: data });
+  async handleSubmit(e) {
+    e.preventDefault();
+    const { response } = this.state;
+    this.setState({ isLoad: false });
+    const { input } = this.state;
+    await searchAlbumsAPI(input).then((data) => {
+      this.setState({
+        response: data,
+        // Lógica concluida com o auxilo João (Lenny)
+        phraseDefault: ` ${data[1].artistName}`,
+      });
     });
+    if (response !== []) {
+      this.setState({ isLoad: true });
+    }
   }
 
   render() {
-    const { isDisabled, input, isLoad, response } = this.state;
-    const { handleSubmit } = this;
+    console.log(this);
+    const { isDisabled, input, isLoad, response, phraseDefault } = this.state;
+    const { handleSubmit, handleInputChange } = this;
     return (
       <div>
         { !isLoad ? <Loading />
@@ -51,7 +66,7 @@ class index extends Component {
                 type="text"
                 placeholder="Procurar um artista..."
                 data-testid="search-artist-input"
-                onChange={ handleSubmit }
+                onChange={ handleInputChange }
                 name={ input }
                 value={ input }
               />
@@ -63,6 +78,10 @@ class index extends Component {
               >
                 Procurar
               </button>
+              <p>
+                Resultado de álbuns de:
+                {phraseDefault}
+              </p>
             </form>
           )}
       </div>
