@@ -4,34 +4,48 @@ class index extends Component {
   constructor() {
     super();
     this.state = {
-      switchValeu: true,
+      input: '',
+      isDisabled: true,
     };
 
     this.handleDisabled = this.handleDisabled.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleDisabled({ target }) {
-    const { value } = target;
+  handleDisabled() {
+    const { input } = this.state;
     const minValue = 2;
-    this.setState({
-      switchValeu: value.length < minValue,
+    if (input.length >= minValue) {
+      return true;
+    }
+    return false;
+  }
+
+  handleSubmit({ target }) {
+    const { value } = target;
+    this.setState({ input: value }, () => {
+      this.setState({ isDisabled: !this.handleDisabled() });
     });
   }
 
   render() {
-    const { switchValeu } = this.state;
+    const { isDisabled, input } = this.state;
+    const { handleSubmit } = this;
     return (
       <form>
         <input
           type="text"
           placeholder="Procurar um artista..."
           data-testid="search-artist-input"
-          onChange={ this.handleDisabled }
+          onChange={ handleSubmit }
+          name={ input }
+          value={ input }
         />
         <button
-          disabled={ switchValeu }
+          disabled={ isDisabled }
           type="submit"
           data-testid="search-artist-button"
+          onClick={ handleSubmit }
         >
           Procurar
         </button>
