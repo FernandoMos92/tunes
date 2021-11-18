@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../Loading';
 import { getUser } from '../../services/userAPI';
 
@@ -34,9 +35,24 @@ class index extends Component {
       <header data-testid="header-component">
         { isLoad ? <Loading />
           : (
-            <h3 data-testid="header-user-name">
-              {name}
-            </h3>
+            <div>
+              <ol>
+                <Link to="/profile" data-testid="link-to-profile">
+                  <li>
+                    Profile
+                  </li>
+                </Link>
+                <Link to="/favorites" data-testid="link-to-favorites">
+                  <li>Favotires</li>
+                </Link>
+                <Link to="/search" data-testid="link-to-search">
+                  <li>Search</li>
+                </Link>
+              </ol>
+              <h3 data-testid="header-user-name">
+                {name}
+              </h3>
+            </div>
           )}
       </header>
     );
