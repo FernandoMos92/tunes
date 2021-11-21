@@ -40,12 +40,11 @@ class index extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { response } = this.state;
+    const { response, input } = this.state;
     this.setState({
       isLoad: false,
       input: '',
     });
-    const { input } = this.state;
     searchAlbumsAPI(input).then((data) => {
       this.setState({
         response: data,
@@ -101,6 +100,7 @@ class index extends Component {
               <div>
                 <div>
                   {response.map((album) => {
+                    console.log(album);
                     const {
                       artworkUrl100,
                       artistName,
@@ -113,7 +113,11 @@ class index extends Component {
                         data-testid={ `link-to-album-${collectionId}` }
                         key={ collectionId }
                       >
-                        <img src={ artworkUrl100 } alt={ collectionName } />
+                        <img
+                          src={ artworkUrl100 }
+                          alt={ collectionName }
+                          id={ collectionId }
+                        />
                         <p>{collectionName}</p>
                         <p>{artistName}</p>
                       </Link>
