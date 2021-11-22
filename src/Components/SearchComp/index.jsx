@@ -100,7 +100,6 @@ class index extends Component {
               <div>
                 <div>
                   {response.map((album) => {
-                    console.log(album);
                     const {
                       artworkUrl100,
                       artistName,

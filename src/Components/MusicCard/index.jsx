@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from '../Loading';
-import { addSong } from '../../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../../services/favoriteSongsAPI';
 
 class index extends Component {
   constructor() {
@@ -11,6 +11,18 @@ class index extends Component {
       isLoad: true,
     };
     this.handleFavorite = this.handleFavorite.bind(this);
+    this.handleGetFavorite = this.handleGetFavorite.bind(this);
+  }
+
+  componentDidMount() {
+    this.handleGetFavorite();
+  }
+
+  handleGetFavorite() {
+    const { trackId } = this.props;
+    getFavoriteSongs().then((data) => {
+      this.setState({ favorite: data.includes(trackId) });
+    });
   }
 
   handleFavorite() {
@@ -23,6 +35,7 @@ class index extends Component {
         isLoad: false,
       });
       addSong(trackId).then(() => {
+        console.log(trackId);
         this.setState({
           isLoad: true,
         });
@@ -33,7 +46,7 @@ class index extends Component {
   }
 
   render() {
-    const { favorite, isLoad } = this.state;
+    const { isLoad, favorite } = this.state;
     const { audio, trackId } = this.props;
     return (
       <div>

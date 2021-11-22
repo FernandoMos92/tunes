@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import MusicCard from '../Components/MusicCard';
 import getMusics from '../services/musicsAPI';
+
 // import './albumStyle.css';
 
 export default class Album extends Component {
