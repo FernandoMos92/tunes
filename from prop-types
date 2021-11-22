@@ -1,0 +1,156 @@
+[33mcommit cb044a4de4f949ac3215703a5493ebe8836d9fcd[m[33m ([m[1;36mHEAD -> [m[1;32mfernando-mos-trybetunes[m[33m, [m[1;31morigin/fernando-mos-trybetunes[m[33m)[m
+Merge: 178c236 84e415f
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Mon Nov 22 16:51:44 2021 -0300
+
+    Merge branch 'fernando-mos-trybetunes' of github.com:tryber/sd-016-a-project-trybetunes into fernando-mos-trybetunes
+
+[33mcommit 178c2367af1f0143cbde3d708c0a1c8f41bc65f8[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Mon Nov 22 16:51:19 2021 -0300
+
+    PASSEI COM BUG DA 9
+
+[33mcommit c5b5c83348aa5f932ead481db2f2b0ae13cc60fe[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Mon Nov 22 15:34:07 2021 -0300
+
+    feat: git reset repair bug
+
+[33mcommit 84e415f7b591dce029c65d0e820cca438f2dcabd[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Sun Nov 21 17:03:13 2021 -0300
+
+    fix: repair bug
+
+[33mcommit badb77060e76bea00e8645b5eabb929170f9dc66[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Sun Nov 21 15:38:49 2021 -0300
+
+    fix: Repair bug
+
+[33mcommit de6aabdb7082cde1007e17460ae635260838a47c[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Sun Nov 21 13:47:04 2021 -0300
+
+    feat: If click in checkbox load
+
+[33mcommit 09be0b4e3d944205b31d49da5b0b73714f2c012f[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Sun Nov 21 12:55:33 2021 -0300
+
+    feat: Completed seventh task with statuff Fumagalli
+
+[33mcommit ecc7cef2797c8331c2e99d516d409d7eddf98119[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Thu Nov 18 02:52:25 2021 -0300
+
+    feat: Completed sixth task
+
+[33mcommit f8ed5ec09d6a327d211d2d1811b5b7676bc6b556[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Thu Nov 18 01:23:55 2021 -0300
+
+    feat: Add Phrase with name artist
+
+[33mcommit 511fa903852468db5e38eebb7a575b550fa856ac[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Thu Nov 18 00:40:09 2021 -0300
+
+    feat: Get element api completed
+
+[33mcommit f4c2c90c33724bb885bfdb3c08651ab85f90947d[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Thu Nov 18 00:01:12 2021 -0300
+
+    feat: Completed logic for button
+
+[33mcommit 55e2d174e2dcedbe3cb8800d9cf786cacace102c[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 22:28:00 2021 -0300
+
+    feat: Fifth task completed
+
+[33mcommit 31700b3ebb7f79facbeebf3e64e6f42966816e45[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 22:03:03 2021 -0300
+
+    feat: Fouth task completed
+
+[33mcommit dffeae3c8fe207d5657a82ece6d34095b37539ca[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 19:31:04 2021 -0300
+
+    fix: repair lint
+
+[33mcommit 57e4dc51d3f478898e44be5e448ca2ae79c140ce[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 14:28:48 2021 -0300
+
+    feat: Completed task three
+
+[33mcommit 92115075b2a68269b5251d5b5e1c4a9f643e394f[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 12:57:06 2021 -0300
+
+    feat: create elemente header
+
+[33mcommit 7c8eef253431eaa883aac0fe2058f2fbf4c0ce79[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 12:55:23 2021 -0300
+
+    fix: repair loading page
+
+[33mcommit 52fc90d459abadaaeab7d7990c44b98006ba20cc[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 02:57:40 2021 -0300
+
+    feat: Completed second task
+
+[33mcommit eaa0bff6bf839da4d9ac890b73b2b63e75266818[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 01:15:16 2021 -0300
+
+    feat: Style page login
+
+[33mcommit 5f1e65e56e1420b729265aad0e6942560a5cbf1d[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Wed Nov 17 00:23:02 2021 -0300
+
+    feat: Component loading create
+
+[33mcommit 1f207bf6e909cf95b8cd0698c0a60ca2ab9d0f3d[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Tue Nov 16 16:34:32 2021 -0300
+
+    feat: First task completed. Add all Route and create all files in Pages folder
+
+[33mcommit 56fb6313fe27ef0ed370ba33da6954a7e51ca707[m
+Author: FernandoMos92 <fernandomosp@gmail.com>
+Date:   Sat Nov 13 01:44:26 2021 -0300
+
+    feat: initial commit
+
+[33mcommit 7a6958103910bed74556c0ffd8f066b69e7267da[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Gustavo-Meira[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Samanta Below <68254088+samantabelow@users.noreply.github.com>
+Date:   Wed Nov 10 10:57:52 2021 -0300
+
+    Update README.md
+
+[33mcommit 5df4038c80b33daaa1873bce23b84488ee0e003a[m
+Author: Jean Paulo Silva Vasconcelos <jean.vasconcelos6@gmail.com>
+Date:   Wed Nov 10 10:56:40 2021 -0300
+
+    Updating .github/workflows/main.yml
+
+[33mcommit 4c6779d76a33c926b717525b19f62c9a38cfb187[m
+Author: Jean Paulo Silva Vasconcelos <jean.vasconcelos6@gmail.com>
+Date:   Wed Nov 10 10:56:39 2021 -0300
+
+    Updating README.md
+
+[33mcommit 81afe2e199c8178c12f3f61be4fcf3e3ec0b5619[m
+Author: Jean Paulo Silva Vasconcelos <jean.vasconcelos6@gmail.com>
+Date:   Wed Nov 10 10:56:34 2021 -0300
+
+    Initial commit

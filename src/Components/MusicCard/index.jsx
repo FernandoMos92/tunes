@@ -18,15 +18,17 @@ class index extends Component {
     this.handleGetFavorite();
   }
 
+  // Auxilio na lógica: Guilherme Augusto T16A
   handleGetFavorite() {
-    const { trackId } = this.props;
+    const { song: { trackId } } = this.props;
+
     getFavoriteSongs().then((data) => {
-      this.setState({ favorite: data.includes(trackId) });
+      this.setState({ favorite: data.some(({ trackId: id }) => id === trackId) });
     });
   }
 
   handleFavorite() {
-    const { trackId } = this.props;
+    const { song } = this.props;
     const { favorite } = this.state;
 
     if (!favorite) {
@@ -34,8 +36,7 @@ class index extends Component {
         favorite: true,
         isLoad: false,
       });
-      addSong(trackId).then(() => {
-        console.log(trackId);
+      addSong(song).then(() => {
         this.setState({
           isLoad: true,
         });
@@ -47,7 +48,7 @@ class index extends Component {
 
   render() {
     const { isLoad, favorite } = this.state;
-    const { audio, trackId } = this.props;
+    const { audio, song } = this.props;
     return (
       <div>
         { isLoad ? (
@@ -64,7 +65,7 @@ class index extends Component {
                 checked={ favorite }
                 type="checkbox"
                 id="favorite"
-                data-testid={ `checkbox-music-${trackId}` }
+                data-testid={ `checkbox-music-${song.trackId}` }
               />
             </label>
           </div>) : <Loading />}
@@ -76,7 +77,7 @@ class index extends Component {
 
 index.propTypes = {
   audio: PropTypes.string.isRequired,
-  trackId: PropTypes.number.isRequired,
+  song: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default index;

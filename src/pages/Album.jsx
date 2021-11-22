@@ -36,10 +36,14 @@ export default class Album extends Component {
           <h3 data-testid="artist-name">{artistName}</h3>
         </div>
         <ul>
-          {validateAlbum.map(({ trackName, previewUrl, trackId }) => (
-            <li key={ trackName }>
-              <p>{trackName}</p>
-              <MusicCard audio={ previewUrl } trackId={ trackId } />
+          {validateAlbum.map((song) => (
+            <li key={ song.trackName }>
+              <p>{song.trackName}</p>
+              <MusicCard
+                audio={ song.previewUrl }
+                song={ song }
+                trackId={ song.trackId }
+              />
             </li>
           ))}
         </ul>
