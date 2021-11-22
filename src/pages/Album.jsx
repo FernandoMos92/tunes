@@ -20,7 +20,7 @@ export default class Album extends Component {
       album: data,
       artistName: data[0].artistName,
       collectionName: data[0].collectionName,
-      trackId: data[0].trackId,
+      // trackId: data[0].trackId,
     }));
   }
 
