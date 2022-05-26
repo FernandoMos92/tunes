@@ -9,7 +9,9 @@ class Search extends Component {
       <>
         <Header />
 
-        <div data-testid="page-search"><SearchComp /></div>
+        <div>
+          <SearchComp />
+        </div>
       </>
     );
   }

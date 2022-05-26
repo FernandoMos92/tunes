@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Loading from '../Loading';
-import { getUser } from '../../services/userAPI';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Loading from "../Loading";
+import { getUser } from "../../services/userAPI";
+import { HiOutlineUserCircle } from 'react-icons/hi';
+import Menu from '../../style/Header-style';
 
 class index extends Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
+      name: "",
       isLoad: true,
     };
 
@@ -32,28 +34,29 @@ class index extends Component {
   render() {
     const { name, isLoad } = this.state;
     return (
-      <header data-testid="header-component">
-        { isLoad ? <Loading />
-          : (
-            <div>
-              <ol>
-                <Link to="/profile" data-testid="link-to-profile">
-                  <li>
-                    Profile
-                  </li>
-                </Link>
-                <Link to="/favorites" data-testid="link-to-favorites">
-                  <li>Favotires</li>
-                </Link>
-                <Link to="/search" data-testid="link-to-search">
-                  <li>Search</li>
-                </Link>
-              </ol>
-              <h3 data-testid="header-user-name">
-                {name}
-              </h3>
+      <header>
+        {isLoad ? (
+          <Loading />
+        ) : (
+          <Menu>
+            <ol>
+              <Link to="/profile">
+                <li>Profile</li>
+              </Link>
+              <Link to="/favorites">
+                <li>Favotires</li>
+              </Link>
+              <Link to="/search" >
+                <li>Search</li>
+              </Link>
+            </ol>
+
+            <div className="container-user">
+                <p>{name}</p>
+                <HiOutlineUserCircle className="icon-user"/>
             </div>
-          )}
+          </Menu>
+        )}
       </header>
     );
   }
