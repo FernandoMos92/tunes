@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineSearch } from 'react-icons/ai';
 import Loading from '../Loading';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
+import ContainerSearch from '../../style/Search-style';
+import '../../style/style.css';
+
 
 class index extends Component {
   constructor() {
@@ -68,67 +72,73 @@ class index extends Component {
       verifyResponse,
     } = this.state;
     const { handleSubmit, handleInputChange } = this;
+
     return (
-      <div>
-        <form>
-          <input
-            type="text"
-            placeholder="Procurar um artista..."
-            data-testid="search-artist-input"
-            onChange={ handleInputChange }
-            name={ input }
-            value={ input }
-          />
-          {!isLoad ? (
-            <Loading />
-          ) : (
-            <button
-              disabled={ isDisabled }
-              type="submit"
-              data-testid="search-artist-button"
-              onClick={ handleSubmit }
-            >
-              Procurar
-            </button>
-          )}
-          <h4>
-            Resultado de álbuns de:
-            {phraseDefault}
-          </h4>
-          {verifyResponse && (
-            response.length > 0 ? (
-              <div>
-                <div>
-                  {response.map((album) => {
-                    const {
-                      artworkUrl100,
-                      artistName,
-                      collectionName,
-                      collectionId,
-                    } = album;
-                    return (
-                      <Link
-                        to={ `/album/${collectionId}` }
-                        data-testid={ `link-to-album-${collectionId}` }
-                        key={ collectionId }
-                      >
-                        <img
-                          src={ artworkUrl100 }
-                          alt={ collectionName }
-                          id={ collectionId }
-                        />
-                        <p>{collectionName}</p>
-                        <p>{artistName}</p>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
+      <span>
+        <ContainerSearch>
+          <form>
+            {!isLoad ? (
+              <Loading />
             ) : (
-              'Nenhum álbum foi encontrado'
-            ))}
-        </form>
-      </div>
+              <>
+                <input
+                type="text"
+                placeholder="Procurar um artista..."
+                data-testid="search-artist-input"
+                onChange={ handleInputChange }
+                name={ input }
+                value={ input }
+              />
+                <button
+                  disabled={ isDisabled }
+                  type="submit"
+                  data-testid="search-artist-button"
+                  onClick={ handleSubmit }
+                >
+                  search
+                  <AiOutlineSearch className='icon-search'/>
+                </button>
+              </>
+            )}
+          </form>
+        <h5 className='result-search'>
+        Resultado de álbuns de:
+        {phraseDefault}
+            </h5>
+        </ContainerSearch>
+        <section className='container-result'>
+          {verifyResponse && (
+              response.length > 0 ? (
+                  <div>
+                    {response.map((album) => {
+                      const {
+                        artworkUrl100,
+                        artistName,
+                        collectionName,
+                        collectionId,
+                      } = album;
+                      return (
+                        <Link
+                          to={ `/album/${collectionId}` }
+                          data-testid={ `link-to-album-${collectionId}` }
+                          key={ collectionId }
+                        >
+                          <img
+                            src={ artworkUrl100 }
+                            alt={ collectionName }
+                            id={ collectionId }
+                          />
+                          <p>{collectionName}</p>
+                          <p>{artistName}</p>
+                        </Link>
+                      );
+                    })}
+                  </div>
+              ) : (
+                'Nenhum álbum foi encontrado'
+              ))}
+        </section>
+      </span>
     );
   }
 }
