@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './pages/Login';
+import Login from './pages';
+
 import Search from './pages/Search';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';

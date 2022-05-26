@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Loading from '../Components/Loading';
-import { createUser } from '../services/userAPI';
-
-import './loginStyle.css';
+import { GiMusicSpell } from 'react-icons/gi';
+import Loading from '../../Components/Loading';
+import { createUser } from '../../services/userAPI';
+import ContainerLogin from '../../style/login-style';
 
 class Login extends Component {
   constructor() {
@@ -52,8 +52,11 @@ class Login extends Component {
       <div data-testid="page-login">
         {isLoad ? <Loading />
           : (
-            <div className="container-login">
-              <h2>TrybeTunes</h2>
+            <ContainerLogin>
+              <h1>
+                TrybeTunes
+                <GiMusicSpell />
+              </h1>
               <form>
                 <label htmlFor="name">
                   <input
@@ -79,7 +82,7 @@ class Login extends Component {
                   </button>
                 </label>
               </form>
-            </div>
+            </ContainerLogin>
           )}
         { returnApi && <Redirect to="./search" /> }
 
