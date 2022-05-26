@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import './style.css';
+import Load from '../../style/Loading-style';
 
 class index extends Component {
   render() {
     return (
-      <div className="load">
+      <Load>
         <p className="hidden-class">Carregando...</p>
-        <div>G</div>
-        <div>N</div>
-        <div>I</div>
         <div>D</div>
         <div>A</div>
         <div>O</div>
         <div>L</div>
-      </div>
+        <div>G</div>
+        <div>N</div>
+        <div>I</div>
+      </Load>
     );
   }
 }

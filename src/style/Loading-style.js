@@ -1,4 +1,7 @@
-.load {
+import styled from 'styled-components';
+
+const Load = styled.div`
+
   height: 36px;
   left: 50%;
   margin-left: -300px;
@@ -7,47 +10,46 @@
   top: 40%;
   user-select: none;
   width: 600px;
-}
 
-.load div {
+  div {
   animation: move 3s linear infinite;
-  color: rgb(47, 193, 140);
+  color: #575656;
   font-family: Helvetica , Arial , sans-serif;
   font-size: 2rem;
   font-weight: 900;
   height: 62px;
   opacity: 0;
   position: absolute;
-  text-shadow: -1.5px -3px 6px red , 1.5px 3px 6px blue;
+  text-shadow: -1.5px -3px 6px rgb(0, 210, 42) , 1.5px 3px 6px rgb(5, 110, 6);
   transform: rotate(360deg);
   width: 20px;
 }
 
-.load div:nth-child( 1 ) {
+div:nth-child( 1 ) {
   animation-delay: -0.2s;
 }
 
-.load div:nth-child( 2 ) {
+div:nth-child( 2 ) {
   animation-delay: -0.4s;
 }
 
-.load div:nth-child( 3 ) {
+div:nth-child( 3 ) {
   animation-delay: -0.8s;
 }
 
-.load div:nth-child( 4 ) {
+div:nth-child( 4 ) {
   animation-delay: -1.2s;
 }
 
-.load div:nth-child( 5 ) {
+div:nth-child( 5 ) {
   animation-delay: -1.8s;
 }
 
-.load div:nth-child( 6 ) {
+div:nth-child( 6 ) {
   animation-delay: -2.2s;
 }
 
-.load div:nth-child( 7 ) {
+div:nth-child( 7 ) {
   animation-delay: -2.6s;
 }
 
@@ -158,3 +160,7 @@
 .hidden-class {
   display: none;
 }
+
+`;
+
+export default Load;
