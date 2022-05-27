@@ -21,7 +21,7 @@ Enquanto não está pronto, aproveite para tomar um café ☕
 <img style="width: 50px" src="https://i.pinimg.com/favicons/e99c01086003420e78f516117d0291bc33561f8d95abcd29961f36df.png?ade12638984a3f8638c369f033ed2096" alt="STYLED COMPONENTS logo"/>
 
 
-Aguarde tomando um bela xicara de café! :coffe:
+Aguarde tomando um bela xicara de café! ☕
 
 - [x] 1. Criar rotas necessárias para a aplicação
 - [x] 2. Crie um formulário para identificação
