@@ -14,7 +14,7 @@ Enquanto não está pronto, aproveite para tomar um café ☕
 
 ## Tecnologias 🔧 e Libs 📚
 
-<img src="https://www.comofazerumsite.com/imagens/HTML5.png" alt="HTML logo"/>
+<img style="width: 30px" src="https://www.comofazerumsite.com/imagens/HTML5.png" alt="HTML logo"/>
 <img src="https://cdn.iconscout.com/icon/free/png-256/css3-8-1175200.png" alt="CSS logo"/>
 <img src="https://logospng.org/download/javascript/logo-javascript-256.png" alt="JS logo"/>
 <img src="https://logospng.org/download/react/logo-react-256.png" alt="REACT logo"/>
