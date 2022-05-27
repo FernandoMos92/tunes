@@ -14,10 +14,7 @@ Enquanto não está pronto, aproveite para tomar um café ☕
 
 ## Tecnologias 🔧 e Libs 📚
 
-<img 
-     
-     src="https://www.comofazerumsite.com/imagens/HTML5.png"
-     alt="HTML logo"/>
+<img src="https://www.comofazerumsite.com/imagens/HTML5.png" alt="HTML logo"/>
 
 
 
