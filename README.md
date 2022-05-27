@@ -15,8 +15,10 @@ Enquanto não está pronto, aproveite para tomar um café ☕
 ## Tecnologias 🔧 e Libs 📚
 
 <img src="https://www.comofazerumsite.com/imagens/HTML5.png" alt="HTML logo"/>
-
-
+<img src="https://cdn.iconscout.com/icon/free/png-256/css3-8-1175200.png" alt="CSS logo"/>
+<img src="hhttps://bognarjunior.files.wordpress.com/2018/01/1crcyaithv7aiqh1z93v99q.png" alt="JS logo"/>
+<img src="https://logospng.org/download/react/logo-react-256.png" alt="REACT logo"/>
+<img src="https://i.pinimg.com/favicons/e99c01086003420e78f516117d0291bc33561f8d95abcd29961f36df.png?ade12638984a3f8638c369f033ed2096" alt="STYLED COMPONENTS logo"/>
 
 
 Aguarde tomando um bela xicara de café! :coffe:
