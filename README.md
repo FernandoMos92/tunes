@@ -14,7 +14,7 @@ Enquanto não está pronto, aproveite para tomar um café ☕
 
 ## Tecnologias 🔧 e Libs 📚
 
-[![made-with-hmtl]([https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png))](https://www.javascript.com)
+[![made-with-hmtl]([(https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png)])
 
 
 
