@@ -2,7 +2,7 @@
 
 :recycle: Em processo de refatoração do porojeto!
 
-Enquanto não está pronto, aproveite para tomar um café :coffe:
+Enquanto não está pronto, aproveite para tomar um café ☕
 
 ## Objetivo do projeto
 
@@ -11,6 +11,10 @@ Enquanto não está pronto, aproveite para tomar um café :coffe:
 - Editar as informações da pessoa logada;
 - Tratar de requisições assíncronas e promises;
 - Uso de lifecycle methods;
+
+## Tecnologias 🔧 e Libs 📚
+
+[![made-with-hmtl]([https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png))](https://www.javascript.com)
 
 
 
