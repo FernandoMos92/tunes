@@ -1,7 +1,20 @@
-# Projeto MusicTunes
+# :construction:  Projeto MusicTunes
 
-:construction: 
-:recycle: In the refactoring process
+:recycle: Em processo de refatoração do porojeto!
+
+
+## Objetivo do projeto
+
+- Trabalhar a habilidade de usar rotas para otimização do SPA (single page application);
+- Consumir e enviar dados para uma API, para consulta de banda ou artista, recuperar músicas de cada álbum e salvar as músicas;
+- Editar as informações da pessoa logada;
+- Tratar de requisições assíncronas e promises;
+- Uso de lifecycle methods;
+
+
+
+
+Aguarde tomando um bela xicara de café! :coffe:
 
 - [x] 1. Criar rotas necessárias para a aplicação
 - [x] 2. Crie um formulário para identificação
