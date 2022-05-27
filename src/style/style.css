@@ -1,10 +1,57 @@
 .container-result {
   display: flex;
+  border-radius: 20px;
   flex-direction: row;
-  border: 2px solid black;
+  box-shadow: 2px 1px 15px lightgray;
   height: fit-content;
   margin: 0 auto;
   height: 45vh;
-  width: 80%;
+  width:75%;
   overflow-y: auto;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+
+.container-result > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+  width:  100%;
+}
+
+.container-result > div > a {
+  background-color: #FFF;
+  box-shadow: 2px 1px 20px lightgray;
+  border-radius: 20px;
+  display: flex;
+  color: #666;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  padding: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .1s ease-in-out;
+}
+
+.container-result > div > a:hover {
+  transform: scale(1.08);
+}
+
+
+.container-result > div > a > img {
+  width: 80px;
+  margin-right: 10%;
+}
+
+.container-result > div > a > .information-artist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  width: 100%;
 }

@@ -101,10 +101,10 @@ class index extends Component {
               </>
             )}
           </form>
-        <h5 className='result-search'>
-        Resultado de álbuns de:
-        {phraseDefault}
-            </h5>
+        <span className='result-search'>
+        <h4>Resultado de álbuns de:</h4>
+        <span>{phraseDefault}</span>
+        </span>
         </ContainerSearch>
         <section className='container-result'>
           {verifyResponse && (
@@ -128,8 +128,16 @@ class index extends Component {
                             alt={ collectionName }
                             id={ collectionId }
                           />
-                          <p>{collectionName}</p>
-                          <p>{artistName}</p>
+                          <div className='information-artist'>
+                            <span>
+                              <h3>Artist:</h3>
+                              {artistName}
+                            </span>
+                            <span>
+                              <h3>Collection:</h3>
+                              {collectionName}
+                            </span>
+                          </div>
                         </Link>
                       );
                     })}

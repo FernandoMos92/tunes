@@ -44,8 +44,20 @@ const ContainerSearch = styled.div`
   }
 
   .result-search {
-    margin-top: 20px;
-    margin-right: 240px;
+    display: inline;
+    width: 400px;
+    padding: 5px;
+    margin-top:20px;
+  }
+
+  .result-search > h4 {
+    display: inline;
+  }
+
+  .result-search > span {
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 400;
   }
 `;
 
